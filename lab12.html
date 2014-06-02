@@ -103,72 +103,161 @@
                     </div>
 				</section>
 
-
-
+                <section>
+                    <h2>Add organizational unit</h2>
+                    <ul>
+                        <li>Now we need to manage our organizational units to add a new one:</li>
+                        <ul>
+                            <li><code>ORGANIZATIONAL UNIT -> MANAGE ORGANIZATIONAL UNITS</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image137.png" />
+                    </div>
+                </section>
 
                 <section>
-                    <h2>JBoss BPM Suite User Configuration</h2>
+                    <h2>Add organizational unit</h2>
                     <ul>
-                        <li>User configuration was automated</li>
-                        <li>Support directory contains user configuration files</li>
+                        <li>Add button to open a new organizational unit:</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image07.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Add organizational unit</h2>
+                    <ul>
+                        <li>Provide the details</li>
                         <ul>
-                            <li><code>$ cat support/application-users.properties</code></li>
-                            <li><code>$ cat support/application-roles.properties</code></li>
-                        </ul>
-                        <li>Installed into:</li>
-                        <ul>
-                            <li><code>target/jboss-eap-6.1/standalone/configuration/</code></li>
+                            <li>click on <code>OK</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image08.png" />
+                            </div>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>JBoss BPM Suite Users</h2>
+                    <h2>Create new repository</h2>
                     <ul>
-                        <li>There are 5 user roles:</li>
+                        <li>We need to create or clone a repository</li>
+                        <li>JBoss BPM Suite uses git as repository structure</li>
                         <ul>
-                            <li><strong>admin</strong> - full access to product</li>
-                            <li><strong>developer</strong> - full access, except Administration</li>
-                            <li><strong>analyst</strong> - developer access, except assets & deployments</li>
-                            <li><strong>user</strong> - only manage processes, tasks, view reports</li>
-                            <li><strong>manager</strong> - most restrictive, only view reports</li>
+                            <li>we can clone existing git repositories</li>
+                            <li>we can create a new one</li>
+                        </ul>
+                        <li>For this lab, we create a new repository</li>
+                        <ul>
+                            <li>creating an HR process</li>
+                            <li>the employee Rewards process</li>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>JBoss BPM Suite Users</h2>
+                    <h2>Create new repository</h2>
                     <ul>
-                        <li><strong>Admin</strong> user & password:</li>
+                        <li>Now we add a repository to our organizational unit:</li>
                         <ul>
-                            <li><code>erics  -  bpmsuite</code></li>
-                        </ul>
-                        <li><strong>Analyst</strong> users & passwords</li>
-                        <ul>
-                            <li><code>mary - bpmsuite</code></li>
-                            <li><code>alan - bpmsuite</code></li>
-                            <li><code>bob - bpmsuite</code></li>
+                            <li><code>REPOSITORIES -> NEW REPOSITORY</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image133.png" />
+                            </div>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Login to JBoss BPM Suite</h2>
+                    <h2>Create new repository</h2>
                     <ul>
-                        <li>Business Central: <a href="http://localhost:8080/business-central" target="_blank">http://localhost:8080/business-central</a></li>
+                        <li>Provide the details</li>
                         <ul>
-                            <li>user: <code>erics</code></li>
-                            <li>password: <code>bpmsuite</code></li>
+                            <li>click on <code>CREATE</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image134.png" />
+                            </div>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image123.png">
+                    <h2>Create new repository</h2>
+                    <ul>
+                        <li>You see the pop-up showing the repository was created.</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image135.png" />
+                        </div>
+                        </ul>
+                    </ul>
                 </section>
 
                 <section>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image124.png">
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>A project is the main organizational and deployment unit for business rules and process assets</li>
+                        <li>A project is modeled as a maven project</li>
+                        <ul>
+                            <li>when deployed, will be deployed as a maven artifact (jar and pom)</li>
+                            <li>when deployed, will be in a maven repo</li>
+                            <li>by default the internal repository from JBoss BPM Suite</li>
+                            <li>it will be ready to be incorporated and consumed by applications</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Head over to the project authoring perspective:</li>
+                        <ul>
+                            <li><code>AUTHORING -> PROJECT AUTHORING</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image138.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Now create a new project:</li>
+                        <ul>
+                            <li><code>NEW ITEM -> PROJECT</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image139.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Provide the details</li>
+                        <ul>
+                            <li>click on <code>OK</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image140.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Provide the <code>Group ID</code> details, click on <code>FINISH</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image141.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image142.png">
                 </section>
 
                 <section>
