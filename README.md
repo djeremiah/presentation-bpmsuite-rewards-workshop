@@ -1,1 +1,1 @@
-![Cover Slide](https://raw.githubusercontent.com/eschabell/openshift-primer-presentation/master/cover.png)
+![Cover Slide](https://raw.githubusercontent.com/eschabell/presentation-bpmsuite-rewards-workshop/master/cover.png)
