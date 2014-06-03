@@ -48,123 +48,202 @@
 
                 <section>
                     <h2>Lab Goal</h2>
-                    <h4>To create a new rewards process with the JBoss BPM Suite process designer</h4>
+                    <h4>To create a new rewards process for submitting employee rewards and processing by HR department</h4>
                 </section>
 
-
-
-
                 <section>
-					<h2>Create new domain model</h2>
+					<h2>Creating rewards process</h2>
                     <ul>
-                        <li>Head over to the project authoring perspective:</li>
+                        <li>In project authoring we will select a new process</li>
                         <ul>
-                            <li><code>AUTHORING -> PROJECT AUTHORING</code></li>
+                            <li><code>AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> BUSINESS PROCESS</code></li>
+                            <li><code>RESOURCE NAME: rewards-approval</code></li>
                             <div style="float: right">
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image138.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image186.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image187.png" />
                             </div>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Create new domain model</h2>
+                    <h2>Creating rewards process</h2>
                     <ul>
-                        <li>Open the domain modeler:</li>
+                        <li>The process has a single start node</li>
+                        <li>We are going to design a 4 step process:</li>
                         <ul>
-                            <li><code>TOOLS -> DATA MODELER</code></li>
+                            <li><code>Approve Reward</code>, an HR user task</li>
+                            <li><code>Log</code>, a service task (domain specific)</li>
+                            <li><code>Gateway</code>, checks approval or denial of reward</li>
+                            <li><code>Personel File</code>, put note in employee personnel file on award status</li>
+                            <li><code>Email Notice</code>, a service task (domain specific) notify employee of results</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>You can use Object Library to drag-and-drop nodes</li>
+                        <li>Easier maybe to click a node and use mini-icons to add next node type</li>
+                        <ul>
+                            <li>click on the start node</li>
+                            <li>click on mini-icon of task to add transition & task node</li>
+                            <li>click on wrench-icon to assign <code>User Task</code></li>
                             <div style="float: right">
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image177.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image188.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image189.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image190.png" />
                             </div>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Create new domain model</h2>
+                    <h2>Creating rewards process</h2>
                     <ul>
-                        <li>Create Employee</li>
-                        <ul>
-                            <li>top right corner click on <code>+CREATE</code> button</li>
-                        </ul>
-                    </ul>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image19.png" />
-                </section>
-
-                <section>
-                    <h2>Create new domain model</h2>
-                    <ul>
-                        <li>Create <code>Employee</code> and click <code>+OK</code> when done</li>
+                        <li>double-click node to name node <code>Approve Reward</code></li>
+                        <li>next open <code>Object Library</code> to select Service Task menu <code>LOG</code> node</li>
                         <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image178.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image191.png" />
+                            <img width="40%" height="40%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image192.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image193.png" />
                         </div>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Create new domain model</h2>
+                    <h2>Creating rewards process</h2>
                     <ul>
-                        <li>Add all fields as shown, hitting <code>+CREATE</code> to add each one</li>
-                        <ul>
-                            <li>name, Name, <code>String</code></li>
-                            <li>dept, Department, <code>String</code></li>
-                            <li>amount, Reward Amount, <code>Double</code></li>
-                        </ul>
+                        <li>locate the <code>Connecting Objects</code> menu on in the <code>Object Library</code></li>
+                        <li>click on <code>Sequence Flow</code>, drag-and-drop onto canvas</li>
                         <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image179.png" />
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image180.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image194.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image195.png" />
                         </div>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Create new domain model</h2>
+                    <h2>Creating rewards process</h2>
                     <ul>
-                        <li>Finished <code>Employee</code> object in our domain model</li>
+                        <li>select <code>Sequence Flow</code>, connect arrow from <code>Approve Reward</code> to <code>Log</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image196.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image197.png" />
+                        </div>
                     </ul>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image181.png" />
                 </section>
 
                 <section>
-                    <h2>Create new domain model</h2>
+                    <h2>Creating rewards process</h2>
                     <ul>
-                        <li>Add <code>Award</code> object to our domain model</li>
-                    </ul>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image182.png" />
-                </section>
-
-                <section>
-                    <h2>Create new domain model</h2>
-                    <ul>
-                        <li>Add all fields as shown, hitting <code>+CREATE</code> to add each one</li>
+                        <li>click on <code>Log</code> node, use mini-icon to click on <code>XOR Gateway</code> to add gateway</li>
                         <ul>
-                            <li>employee, Employee, <code>EMPLOYEE</code></li>
-                            <li>reason, Award Reason, <code>String</code></li>
-                            <li>outcome, Approval, <code>Boolean</code></li>
-                            <li>explanation, Explanation, <code>String</code></li>
-                            <div style="float: right">
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image183.png" />
-                            </div>
+                            <li>we want the process to take one and only one of the offered paths (XOR)</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image198.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image199.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Be sure to regularly <code>SAVE</code> your work, found in top right floppy-disk-icon</li>
+                        <li>You will be asked to enter a commit comment to save your work</li>
+                        <li>When you save your work, should see a green bar showing save succeeded</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image200.png" />
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image201.png" />
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>select mini-icon from gateway node to add the first of two <code>task nodes</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image202.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image203.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>select mini-icon from gateway node to add the final <code>task node</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image204.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>click on each <code>task nodes</code> wrench-icon to select <code>script tasks</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image205.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>double-click on the top <code>script tasks</code> to assign name: <code>Note Personnel File Rejected</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image206.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>double-click on the second <code>script tasks</code> to assign name: <code>Note Personnel File Accepted</code></li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image207.png" />
+                    </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>After making a note in the personnel files, we want to notify the employee by email</li>
+                        <li>Add to each path a <code>service task</code> called <code>Email</code></li>
+                        <ul>
+                            <li>drag-and-drop the <code>Email service tasks</code> onto the canvas</li>
                         </ul>
                     </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image208.png" />
+                    </div>
+                    </ul>
                 </section>
 
                 <section>
-                    <h2>Create new domain model</h2>
+                    <h2>Creating rewards process</h2>
                     <ul>
-                        <li>Finished <code>Award</code> object in our domain model</li>
+                        <li>To add transitions, you can drag-and-drop as shown previously</li>
+                        <li>Or you can select the <code>script task</code> and use the mini-icons</li>
+                        <ul>
+                            <li>drag-and-drop the <code>mini-icon transition arrow</code> onto the <code>Email node</code></li>
+                        </ul>
                     </ul>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image184.png" />
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image209.png" />
+                    </div>
+                    </ul>
                 </section>
 
-                <section>
-                    <h2>Save domain model</h2>
-                    <ul>
-                        <li>Click on <code>SAVE</code> button to persist the domain model</li>
-                        <li>pop-up bar should say <code>Data model was saved</code></li>
-                    </ul>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image31.png" />
-                </section>
+
+
 
                 <section>
                     <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/jteimages/image42.png">
@@ -197,7 +276,7 @@
                 <section>
                     <h3>JBoss BPM Suite Workshop</h3>
                     <ul>
-                        <li><a href="lab14.html" target="_blank">Lab 14 - Create rewards process</a></li>
+                        <li><a href="lab15.html" target="_blank">Lab 15 - Design user task forms</a></li>
                     </ul>
                 </section>
             </div>
