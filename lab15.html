@@ -51,239 +51,85 @@
                     <h4>To complete the details of rewards process for submitting employee rewards and processing by HR department</h4>
                 </section>
 
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>The process we designed is incomplete, we need configuration, task group assignments, variables, etc.</li>
+                        <li>In this lab we will walk through the process to:</li>
+                        <ul>
+                            <li>assign process variables to map in our domain model</li>
+                            <li>configure and assign the user task to a group</li>
+                            <li>configure domain specific tasks (Log and Email)</li>
+                            <li>showcase process designer features that make life easier</li>
+                        </ul>
+                    </ul>
+                </section>
 
                 <section>
-					<h2>Creating rewards process</h2>
+                    <h2>Rewards process details</h2>
                     <ul>
-                        <li>In project authoring we will select a new process</li>
+                        <li>In project authoring we open rewards process and <code>Properties</code> tray</li>
                         <ul>
-                            <li><code>AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> BUSINESS PROCESS</code></li>
-                            <li><code>RESOURCE NAME: rewards-approval</code></li>
+                            <li><code>AUTHORING -> PROJECT AUTHORING -> PROJECT EXPLORER PANEL (right) -> BUSINESS PROCESSES -> rewards-approval</code></li>
+                            <li>slide out <code>Properties</code> panel, but it overlaps...</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image221.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image222.png" />
+                        </div>
+                        <li>There is a tool at the top of the designer on far right</li>
+                        <ul>
+                            <li>no matter what the canvas size is for the process, click on the mini-icon of a <code>screen</code>, process now fits!</li>
                             <div style="float: right">
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image186.png" />
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image187.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image223.png" />
                             </div>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Creating rewards process</h2>
+                    <h2>Rewards process details</h2>
                     <ul>
-                        <li>The process has a single start node</li>
-                        <li>We are going to design a 4 step process:</li>
+                        <li>Let's do one more resizing of your process:</li>
                         <ul>
-                            <li><code>Approve Reward</code>, an HR user task</li>
-                            <li><code>Log</code>, a service task (domain specific)</li>
-                            <li><code>Gateway</code>, checks approval or denial of reward</li>
-                            <li><code>Personel File</code>, put note in employee personnel file on award status</li>
-                            <li><code>Email Notice</code>, a service task (domain specific) notify employee of results</li>
-                        </ul>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>You can use Object Library to drag-and-drop nodes</li>
-                        <li>Easier maybe to click a node and use mini-icons to add next node type</li>
-                        <ul>
-                            <li>click on the start node</li>
-                            <li>click on mini-icon of task to add transition & task node</li>
-                            <li>click on wrench-icon to assign <code>User Task</code></li>
+                            <li>slide out left tray, resize using mini-icon, now fits between trays</li>
+                            <li>this is one of the most used features of the process designer</li>
                             <div style="float: right">
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image188.png" />
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image189.png" />
-                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image190.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image224.png" />
                             </div>
                         </ul>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Creating rewards process</h2>
+                    <h2>Rewards process details</h2>
                     <ul>
-                        <li>double-click node to name node <code>Approve Reward</code></li>
-                        <li>next open <code>Object Library</code> to select Service Task menu <code>LOG</code> node</li>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image191.png" />
-                            <img width="40%" height="40%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image192.png" />
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image193.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>locate the <code>Connecting Objects</code> menu on in the <code>Object Library</code></li>
-                        <li>click on <code>Sequence Flow</code>, drag-and-drop onto canvas</li>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image194.png" />
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image195.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>select <code>Sequence Flow</code>, connect arrow from <code>Approve Reward</code> to <code>Log</code></li>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image196.png" />
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image197.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>click on <code>Log</code> node, use mini-icon to click on <code>XOR Gateway</code> to add gateway</li>
+                        <li>Now back to the process details, starting with process variables</li>
                         <ul>
-                            <li>we want the process to take one and only one of the offered paths (XOR)</li>
-                        </ul>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image198.png" />
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image199.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Save rewards process</h2>
-                    <ul>
-                        <li>Be sure to regularly <code>SAVE</code> your work, found in top right floppy-disk-icon</li>
-                        <li>You will be asked to enter a commit comment to save your work</li>
-                        <li>When you save your work, should see a green bar showing save succeeded</li>
-                    </ul>
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image200.png" />
-                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image201.png" />
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>select mini-icon from gateway node to add the first of two <code>task nodes</code></li>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image202.png" />
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image203.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>select mini-icon from gateway node to add the final <code>task node</code></li>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image204.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>click on each <code>task nodes</code> wrench-icon to select <code>script tasks</code></li>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image205.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>double-click on the top <code>script tasks</code> to assign name: <code>Note Personnel File Rejected</code></li>
-                        <div style="float: right">
-                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image206.png" />
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>double-click on the second <code>script tasks</code> to assign name: <code>Note Personnel File Accepted</code></li>
-                    </ul>
-                    <div style="float: right">
-                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image207.png" />
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>After making a note in the personnel files, we want to notify the employee by email</li>
-                        <li>Add to each path a <code>service task</code> called <code>Email</code></li>
-                        <ul>
-                            <li>drag-and-drop the <code>Email service tasks</code> onto the canvas</li>
+                            <li>slide out right <code>Properties</code> tray, click on </li>
                         </ul>
                     </ul>
                     <div style="float: right">
-                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image208.png" />
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image2??.png" />
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image2??.png" />
                     </div>
                 </section>
 
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>To add transitions, you can drag-and-drop as shown previously</li>
-                        <li>Or you can select the <code>script task</code> and use the mini-icons</li>
-                        <ul>
-                            <li>drag-and-drop the <code>mini-icon transition arrow</code> onto the <code>Email node</code></li>
-                        </ul>
-                    </ul>
-                    <div style="float: right">
-                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image209.png" />
-                    </div>
-                </section>
 
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>Double-click on the top <code>Email node</code> to name it <code>Email Rejected</code></li>
-                        <li>The same for the bottom path, naming it to <code>Email Approved</code></li>
-                        <ul>
-                            <li>these are nodes to send an email of the rewards approval process to the employee</li>
-                        </ul>
-                    </ul>
-                    <div style="float: right">
-                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image210.png" />
-                    </div>
-                </section>
 
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>Double-click on <code>Email Rejected</code>, click on mini-icon <code>End node</code></li>
-                        <li>This adds the final end node, name it <code>End Rejected</code> path for unique name</li>
-                        <ul>
-                            <li>repeat for the accepted path</li>
-                        </ul>
-                    </ul>
-                    <div style="float: right">
-                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image211.png" />
-                    </div>
-                </section>
 
-                <section>
-                    <h2>Creating rewards process</h2>
-                    <ul>
-                        <li>Before we move to our process details we will colorize</li>
-                        <li>We start by coloring our user task blue & log task orange</li>
-                        <ul>
-                            <li>select <code>Approve Reward</code>, slide out right <code>Properties</code> tray</li>
-                            <li>under <code>Graphical Settings -> Background Color</code> click on color block</li>
-                            <li>pull down menu, select blue, click on canvas to assign</li>
-                        </ul>
-                    </ul>
-                    <div style="float: right">
-                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image212.png" />
-                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image213.png" />
-                    </div>
-                </section>
+
+
+
+
 
                 <section>
                     <h2>Creating rewards process</h2>
@@ -324,7 +170,7 @@
                 </section>
 
                 <section>
-                    <h2>Rewards process</h2>
+                    <h2>Rewards progress</h2>
                     <h5>(next up, completing process details...)</h5>
                     <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image220.png">
                 </section>
