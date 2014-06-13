@@ -105,7 +105,6 @@
                         <ul>
                             <li>name, Name, <code>String</code></li>
                             <li>dept, Department, <code>String</code></li>
-                            <li>amount, Reward Amount, <code>Double</code></li>
                         </ul>
                         <div style="float: right">
                             <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image179.png" />
@@ -117,7 +116,10 @@
                 <section>
                     <h2>Create new domain model</h2>
                     <ul>
-                        <li>Finished <code>Employee</code> object in our domain model</li>
+                        <li>Finished <code>Employee</code> object in our domain model for now...</li>
+                        <ul>
+                            <li>later we will add an Award, but first we need to create the Award object</li>
+                        </ul>
                     </ul>
                     <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image181.png" />
                 </section>
@@ -136,8 +138,7 @@
                         <li>Add all fields as shown, hitting <code>+CREATE</code> to add each one</li>
                         <ul>
                             <li>employee, Employee, <code>EMPLOYEE</code></li>
-                            <li>reason, Award Reason, <code>String</code></li>
-                            <li>outcome, Approval, <code>Boolean</code></li>
+                            <li>amount, Award amount, <code>Integer</code></li>
                             <li>explanation, Explanation, <code>String</code></li>
                             <div style="float: right">
                                 <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image183.png" />
@@ -155,6 +156,29 @@
                 </section>
 
                 <section>
+                    <h2>Create new domain model</h2>
+                    <ul>
+                        <li>Finalize domain model by adding <code>Award</code> object to <code>Employee</code></li>
+                        <ul>
+                            <li>award, Award, <code>AWARD</code></li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image234.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new domain model</h2>
+                    <ul>
+                        <li>Final domain model with <code>Award</code> and <code>Employee</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image235.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
                     <h2>Save domain model</h2>
                     <ul>
                         <li>Click on <code>SAVE</code> button to persist the domain model</li>
@@ -165,6 +189,7 @@
 
                 <section>
                     <h2>Rewards process project</h2>
+                    <h5>(next up, creating rewards process...)</h5>
                     <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image185.png">
                 </section>
 
