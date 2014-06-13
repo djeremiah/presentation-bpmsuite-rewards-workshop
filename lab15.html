@@ -113,6 +113,8 @@
                     <h2>Rewards process details</h2>
                     <ul>
                         <li>Now back to the process details, starting with process variables</li>
+                        <li>We will be submitting an <code>Employee</code> to our process</li>
+                        <li>Also two variables during processing; <code>name</code> & <code>outcome</code></li>
                         <ul>
                             <li>slide out right <code>Properties</code> tray</li>
                             <li>click on process canvas, select <code>Variable Definitions</code>, click drop down arrow</li>
@@ -143,11 +145,10 @@
                 <section>
                     <h2>Rewards process details</h2>
                     <ul>
-                        <li>click <code>Add Variable</code> to start row 2 entry</li>
+                        <li>click <code>Add Variable</code> to add two more entries</li>
                         <ul>
-                            <li><code>Name: award</code></li>
-                            <li><code>Standard Type: Object</code></li>
-                            <li><code>Custom Type: com.redhat.jboss.hr.rewards.Award</code></li>
+                            <li><code>outcome, Boolean</code></li>
+                            <li><code>name, String</code></li>
                         </ul>
                     </ul>
                     <div style="float: right">
@@ -178,28 +179,326 @@
                         <li>click on <code>Approve Reward</code> user task</li>
                         <li>in right <code>Properties</code> pane assign fields:</li>
                         <ul>
-                            <li><code>DataInputSet:</code> use editor to map into task <i>employee</i> and <i>award</i></li>
-                            <li><code>Groups: manager</code></li>
-                            <li><code>Extra Properties -> Comment: 'You need to appprove this employees reward.'</code></li>
+                            <li><code>DataInputSet:</code> use editor to map into task <i>employee_in</i></li>
                         </ul>
                     </ul>
                     <div style="float: right">
                         <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image232.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>click on <code>Approve Reward</code> user task</li>
+                        <li>in right <code>Properties</code> pane assign fields:</li>
+                        <ul>
+                            <li><code>Assignments:</code></li>
+                            <ul>
+                                <li>New Data Input Assignment: <code>employee</code> object mapped to <code>employee_in</code> task variable</li>
+                                <li>New Data Output Assignment: <code>approval</code> mapped out to <code>outcome</code> process variable</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
                         <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image233.png" />
                     </div>
                 </section>
 
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>click on <code>Approve Reward</code> user task</li>
+                        <li>In right <code>Properties</code> pane assign fields:</li>
+                        <ul>
+                            <li><code>Groups: manager</code></li>
+                            <li><code>Name: Approve Reward</code></li>
+                            <li>On Exit Action: <code>kcontext.setVariable("name", employee.getName());</code></li>
+                        </ul>
+                        <li>Last action is to copy employee name out to our name process variable</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image236.png" />
+                    </div>
+                </section>
 
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>The Approve Reward user task properties should look like this when done:</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image237.png" />
+                    </div>
+                </section>
 
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
 
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Click on the <code>Log</code> node, select <code>Assignments</code> in the properties to map a message to be logged.</li>
+                        <li><code>New Data Input Assignement:</code></li>
+                        <ul>
+                            <li>From Object: <code>Message</code></li>
+                            <li>Assigment Type: <code>is equal to</code></li>
+                            <li>To value: <code>Reward for employee #{name} transaction logged.</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image238.png" />
+                    </div>
+                </section>
 
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
 
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Click on the top sequence flow arrow leading to rejected path</li>
+                        <li>in Properties pane right open <code>Expression</code> editor</li>
+                        <li>In Editor tab select:</li>
+                        <ul>
+                            <li>Process variable: <code>outcome</code></li>
+                            <li>Condition: <code>is false</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image239.png" />
+                    </div>
+                </section>
 
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Click on the top sequence flow arrow leading to rejected path</li>
+                        <li>in Properties pane right open <code>Expression</code> editor</li>
+                        <li>View source in Script tab</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image240.png" />
+                    </div>
+                </section>
 
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Click on the top sequence flow arrow leading to accepted path</li>
+                        <li>in Properties pane right open <code>Expression</code> editor</li>
+                        <li>In Editor tab select:</li>
+                        <ul>
+                            <li>Process variable: <code>outcome</code></li>
+                            <li>Condition: <code>is true</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image241.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Click on the top sequence flow arrow leading to accepted path</li>
+                        <li>in Properties pane right open <code>Expression</code> editor</li>
+                        <li>View source in Script tab</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image242.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Select the script task <code>Note Personnel File Rejected</code></li>
+                        <li>Here we simulate adding rejected note to employees personnel file</li>
+                        <li>in Properties pane right open <code>Script</code> editor</li>
+                        <li>In Expression Editor add:</li>
+                        <ul>
+                            <li><code>System.out.println("Note for the personnel file of " + kcontext.getVariable("name") + ", award rejected.");</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image243.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Select the script task <code>Note Personnel File Approved</code></li>
+                        <li>Here we simulate adding approved note to employees personnel file</li>
+                        <li>in Properties pane right open <code>Script</code> editor</li>
+                        <li>In Expression Editor add:</li>
+                        <ul>
+                            <li><code>System.out.println("Note for the personnel file of " + kcontext.getVariable("name") + ", award approved.");</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image244.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Select the Email task <code>Email Rejected</code></li>
+                        <li>Here we will send a rejection letter to the employees</li>
+                        <li>in Properties pane right open <code>DataInputSet</code></li>
+                        <ul>
+                            <li>Add Data Input: <code>From</code> as a String</li>
+                            <li>Add Data Input: <code>Subject</code> as a String</li>
+                            <li>Add Data Input: <code>Body</code> as a String</li>
+                            <li>Add Data Input: <code>To</code> as a String</li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image245.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Select the Email task <code>Email Rejected</code></li>
+                        <li>in Properties pane right open <code>Assignments</code></li>
+                        <li>Add <code>New Data Input Assignment</code> for each item below:</li>
+                        <ul>
+                            <li><code>From</code> is equal to <code>hr@company.com</code></li>
+                            <li><code>Subject</code> is equal to <code>Your reward was rejected!</code></li>
+                            <li><code>Body</code> is equal to <code>We are happy to inform you that your reward submission was rejected, best of luck next time!!</code></li>
+                            <li><code>To</code> is equal to <code>#{name}@company.com</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image246.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Select the Email task <code>Email Accepted</code></li>
+                        <li>Here we will send a congratulatory letter to the employees</li>
+                        <li>in Properties pane right open <code>DataInputSet</code></li>
+                        <ul>
+                            <li>Add Data Input: <code>From</code> as a String</li>
+                            <li>Add Data Input: <code>Subject</code> as a String</li>
+                            <li>Add Data Input: <code>Body</code> as a String</li>
+                            <li>Add Data Input: <code>To</code> as a String</li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image245.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Rewards process details</h2>
+                    <ul>
+                        <li>Select the Email task <code>Email Accepted</code></li>
+                        <li>in Properties pane right open <code>Assignments</code></li>
+                        <li>Add <code>New Data Input Assignment</code> for each item below:</li>
+                        <ul>
+                            <li><code>From</code> is equal to <code>hr@company.com</code></li>
+                            <li><code>Subject</code> is equal to <code>Your reward was approved!</code></li>
+                            <li><code>Body</code> is equal to <code>We are happy to inform you that your reward submission was approved and will soon be deposited to your bank account!</code></li>
+                            <li><code>To</code> is equal to <code>#{name}@company.com</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image247.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Save process under mini-floppy menu in upper right corner</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image230.png" />
+                        </div>
+                        <li>Click <code>Save</code>, submit commit message, see green conformation pop-up</li>
+                    </ul>
+                </section>
 
                 <section>
                     <h2>Rewards progress</h2>
-                    <h5>(next up, completing process details...)</h5>
+                    <h5>(next up, creating process and task forms...)</h5>
                     <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image220.png">
                 </section>
 
@@ -234,7 +533,7 @@
                 <section>
                     <h3>JBoss BPM Suite Workshop</h3>
                     <ul>
-                        <li><a href="lab15.html" target="_blank">Lab 15 - Completing process details</a></li>
+                        <li><a href="lab16.html" target="_blank">Lab 16 - Creating process and task forms</a></li>
                     </ul>
                 </section>
             </div>
