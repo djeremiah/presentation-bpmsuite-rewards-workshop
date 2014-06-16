@@ -44,8 +44,133 @@
 			<div class="slides">
 				<section>
                     <h3>Lab 16 - Creating process and task forms</h3>
-                    <h5>(coming soon...)</h5>
 				</section>
+
+                <section>
+                    <h2>Lab Goal</h2>
+                    <h4>To create process and task forms needed by the rewards process for submitting and processing by HR department</h4>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>We have completed the configuration of our process we need to design our user forms</li>
+                        <li>There are two forms & a sub-form we need:</li>
+                        <ul>
+                            <li>form to submit initial process</li>
+                            <li>user task form for <code>Approve Reward</code> task</li>
+                            <li>sub-form to define <code>Award</code> object to embed in <code>Employee</code> sub-form</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>We start by opening our Rewards process in the designer</li>
+                        <li>We need to pull down the menu-icon that lists <code>Generate all Forms</code></li>
+                        <li>Click to generate the following forms:</li>
+                        <ul>
+                            <li><code>rewards.rewards-approval-taskform</code></li>
+                            <li><code>ApproveReward-taskform</code></li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image248.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image249.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>Click on the <code>rewards.rewards-approval-taskform</code> to open</li>
+                        <ul>
+                            <li>form opens with the tab <code>Add fields by type</code></li>
+                            <li>by default all variables listed for the process are added</li>
+                            <li>we need to submit only an employee object, so let's clean this form up</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image250.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>Cleaning up the generated <code>rewards.rewards-approval-taskform</code></li>
+                        <ul>
+                            <li>click on trash icon to remove the <code>outcome</code> item</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image251.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image252.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>Cleaning up the generated <code>rewards.rewards-approval-taskform</code></li>
+                        <ul>
+                            <li>click on the <code>Last</code> icon to move <code>award</code> item to bottom of the form</li>
+                            <li>click on the <code>First</code> icon to move <code>name</code> item to the top of the form</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image253.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image254.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>Cleaning up the generated <code>rewards.rewards-approval-taskform</code></li>
+                        <ul>
+                            <li>to make the form nicer for our user, we add an HTML title</li>
+                            <li>click on the arrow icon at the top entry <code>HTML label</code></li>
+                            <li>move the <code>HTML</code> to the top of the form using the <code>First</code> icon</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image255.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>Cleaning up the generated <code>rewards.rewards-approval-taskform</code></li>
+                        <ul>
+                            <li>click on the pencil icon for <code>HTML</code> to open the <code>Properties</code> panel</li>
+                            <li>change text from <code>HTML</code> to: <code>Submit Employee Reward:</code></li>
+                            <li>set text size to <code>Heading 2</code> and <code>SAVE</code> to update form</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image255.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image256.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rewards form design</h2>
+                    <ul>
+                        <li>Cleaning up the generated <code>rewards.rewards-approval-taskform</code></li>
+                        <ul>
+                            <li>now the <code>award</code> item in the form has error message</li>
+                            <li>the message is stating that there is no form generated for the award item</li>
+                            <li>we will have to create this form, called a <code>sub-from</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image257.png" />
+                    </div>
+                </section>
+
 
             </div>
 		</div>
