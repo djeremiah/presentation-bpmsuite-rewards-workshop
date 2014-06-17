@@ -1,11 +1,7 @@
 ![Cover Slide](https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/rewards-workshop.png)
 
-JBoss BPM Suite Online Workshop
-==============================
-
-
-Workshop quickstart 
--------------------
+Getting started with the workshop locally:
+------------------------------------------
 
 1. Clone project.
 
