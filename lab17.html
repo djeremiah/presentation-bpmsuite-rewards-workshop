@@ -49,6 +49,7 @@
                 <section>
                     <h2>Lab Goal</h2>
                     <h4>To build, deploy, start, and complete rewards process including task forms for approving an employee rewards submission</h4>
+                    <img height="75%" width="75%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/bpmsuite-component-execution.png">
                 </section>
 
                 <section>
@@ -63,25 +64,199 @@
 
                 <section>
                     <h2>Running rewards process</h2>
-                </section>
-
-
-                <section>
-                    <h2>Running rewards process</h2>
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Let's start by building and deploying our rewards project.</li>
+                        <li><code>Project Authoring -> Tools -> Project Editor</code></li>
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image284.png">
+                        <li>click on  <i>Build & Deploy</i> button in top right corner</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image285.png">
                 </section>
 
                 <section>
                     <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Click on <i>No</i> in Information popup to just build and deploy</li>
+                        <li>Watch for the green popup bar stating that the build was successful</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image286.png">
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image287.png">
                 </section>
 
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Now we can examine our deployed process definition</li>
+                        <li><code>Project Authoring -> Process Mangement -> Process Definitions</code></li>
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image150.png">
+                        <li>To view our definition details, click on the magnifying glass icon under <i>Actions</i></li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image288.png">
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>An overview of the various process definition details is given in this view</li>
+                        <li>You can start a process instance from here by clicking the <i>New Instance</i> button</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image289.png">
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>We can also start a process instance from the <i>Process Definition</i> view by clicking the start-icon under <i>Actions</i></li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image288.png">
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Either way, we get a popup start process form that we designed previously</li>
+                        <li>We fill in the rewards submission details and click on the arrow at the bottom</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image290.png">
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Watch for the yellow popup bar stating <i>Process instance started</i></li>
+                        <li>We are then presented with the process instance view, notice progression to <i>Approve Reward</i> task</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image291.png">
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Open the task list to view waiting user tasks</i></li>
+                        <li><code>Project Authoring -> Tasks -> Tasks List</code></li>
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image292.png">
+                        <li>Our task is in the <i>Active</i> and <i>Group</i> lists until claimed</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image293.png">
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Click on open lock icon to claim the task, a yellow popup bar confirms claim</li>
+                        <li>We are presented with the details of our task</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image294.png">
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>To start working on this item, click on the check-icon or <i>Work</i> button</i></li>
+                        <li>Presented the task form on the right as we designed it, data read-only, approval check box</li>
+                        <li>But wait.... something is wrong???</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image295.png">
+                </section>
+
+                <section>
+                    <h2>Intermezzo</h2>
+                    <ul>
+                        <li>The read-only data for <i>amount</i> and <i>explaination</i> from our Award object is missing?</li>
+                        <li>This is a problem and left to you for extra credit to fix</li>
+                        <li>Hint: mappings of data in forms...</li>
+                    </ul>
+                    <div align="right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image296.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Even though the data is not available for viewing right now, we can approve or deny the request</li>
+                        <li>We will approve this request by checking the box (leave blank to deny)</li>
+                        <li>Finally, to complete task, click on <i>Complete</i> button at the bottom</li>
+                    </ul>
+                    <div align="right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image297.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>You should see a yellow popup bar stating task was completed</li>
+                        <li>Then we are presented with an empty task list as we are done</li>
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image298.png">
+                        <li>Now we can go back and view the completed process instance</li>
+                        <li><code>Process Management -> Process Instances</code></li>
+                    </ul>
+                    <div align="right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image299.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>The initial view is empty as you are looking at <i>Active</i> process instances</li>
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image300.png">
+                        <li>We need the <i>Completed</i> instances, here I have two, yours might differ</li>
+                        <li>Click on magnifying glass icon to open your instance</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Here we selected process instance with <i>ID 2</i></li>
+                        <li>There are various details we can examine, like the <i>Instance Log</i> to see the path taken</li>
+                    </ul>
+                    <div align="right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image301.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>What is more interesting is an image of the paths taken which is found under <i>Views</i> button</li>
+                        <li><code>Views -> Process Model</code></li>
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image302.png">
+                        <li>The grey path is the one taken by this instance</li>
+                    </ul>
+                    <div align="right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image303.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Also interesting are the values that the process variables contained, also found under <i>Views</i> button</li>
+                        <li><code>Views -> Process Variables</code></li>
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image304.png">
+                        <li>View variable values over time by clicking any clock icon</li>
+                    </ul>
+                    <div align="right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image305.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Running rewards process</h2>
+                    <ul>
+                        <li>Now lets start a new process instance (remember how?) and not complete it</li>
+                        <li>We will leave it to make the BAM (Business Activity Monitoring) dashboards interesting</li>
+                        <li>So do that now, start a new instance and then open the <i>Process & Task Dashboard</i></li>
+                        <li><code>Process Management -> Process Definition -> click start-icon -> fill in and submit form</code></li>
+                        <li><code>Dashboards -> Process & Task Dashboard</code></li>
+                    </ul>
+                    <div align="right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image305.png">
+                    </div>
+                </section>
 
 
 
