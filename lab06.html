@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Red Hat JBoss BPM Suite - Building the Rewards Business Process Workshop</title>
+  <title>Red Hat JBoss BRMS Suite - Building the Coolstore Business Rules Workshop</title>
 
   <meta name="description" content="Online BPM workshop.">
   <meta name="author" content="Eric D. Schabell">
@@ -43,169 +43,142 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
       <section>
-        <h3>Lab 13 - Create a domain model</h3>
+        <h3>Lab 06 - Create Technical Rules (DRL)</h3>
       </section>
 
       <section>
         <h2>Lab Goal</h2>
-        <h4>To create a new domain model with the JBoss BPM Suite domain modeler</h4>
-        <img height="75%" width="75%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/bpmsuite-component-datamodeler.png">
+        <h4>To create a technical rule (DRL) to total up the shopping cart items for Cool Store</h4>
+      </section>
+
+
+
+      <section>
+        <h2>Creating rules (DRL)</h2>
+        <ul>
+          <li>Technical rules generally not created here:</li>
+          <ul>
+            <li>developer teams tend authors technical rules</li>
+            <li>they are then uploaded to the repository</li>
+            <li>they appear here in a free form editor</li>
+            <li>there is no syntax help in editor (caution...)</li>
+            <li>business users advised to stick with guided rule editors</li>
+            <li>for completeness we create one technical rule here...</li>
+          </ul>
+
+        </ul>
       </section>
 
       <section>
-        <h2>Create new domain model</h2>
+        <h2>Creating rules (DRL)</h2>
         <ul>
-          <li>Head over to the project authoring perspective:</li>
+          <li>First we will create a new rule:</li>
           <ul>
-            <li><code>AUTHORING -> PROJECT AUTHORING</code>
+            <li><code>AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> DRL FILE</code>
             </li>
-            <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image138.png" />
-            </div>
-          </ul>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Open the domain modeler:</li>
-          <ul>
-            <li><code>TOOLS -> DATA MODELER</code>
+            <li><code>AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> DRL FILE</code>
             </li>
-            <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image177.png" />
-            </div>
           </ul>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Create Employee</li>
-          <ul>
-            <li>click on <code>+CREATE</code> button</li>
-          </ul>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image19.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Create <code>Employee</code> and click <code>+OK</code> when done</li>
           <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image178.png" />
+            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image49.png" />
+          </div>
+
+        </ul>
+      </section>
+      <section>
+        <h2>Creating rules (DRL)</h2>
+        <ul>
+          <li>Presented with an empty free text editor for our rule (DRL)</li>
+          <li>add package name:</li>
+          <ul>
+            <li><code>package com.redhat.coolstore</code>
+            </li>
+          </ul>
+
+
+        </ul>
+      </section>
+
+      <section>
+        <h2>Creating rules (DRL)</h2>
+        <ul>
+          <li>Add basic rule outline, noting indentation:</li>
+          <ul>
+            <li><code>rule "Total Shopping Cart Items"</code>
+            </li>
+            <li><code>ruleflow-group "pricing-rules"</code>
+            </li>
+            <li><code>no-loop true</code>, <code>when</code>, <code>then</code>, <code>end</code>
+            </li>
+          </ul>
+
+          <div style="float: right">
+            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image50.png" />
           </div>
         </ul>
       </section>
 
       <section>
-        <h2>Create new domain model</h2>
+        <h2>Creating rules (DRL)</h2>
         <ul>
-          <li>Add all fields as shown, hitting <code>+CREATE</code> to add each one</li>
+          <li>Now lets look at the core of this rule</li>
+          <li>The condition (WHEN):</li>
           <ul>
-            <li>name, Name, <code>String</code>
+            <li><code>'There is a ShoppingCart'</code>
             </li>
-            <li>dept, Department, <code>String</code>
+            <li>assign a variable name to this ShoppingCart <code>'$sc'</code>
+            </li>
+            <li><code>'There is a ShoppingCartItem with field shoppingCart equal to $sc'</code>
+            </li>
+            <li>assign a variable name to this ShoppingCartItem <code>'$sci'</code>
             </li>
           </ul>
+          <li>Can use Fact Types in right column, just remove package names</li>
+
           <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image179.png" />
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image180.png" />
+            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image51.png" />
           </div>
         </ul>
       </section>
 
       <section>
-        <h2>Create new domain model</h2>
+        <h2>Creating rules (DRL)</h2>
         <ul>
-          <li>Finished <code>Employee</code> object in our domain model for now...</li>
+          <li>The action (THEN) has four parts</li>
           <ul>
-            <li>later we will add an Award, but first we need to create the Award object</li>
-          </ul>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image181.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Add <code>Award</code> object to our domain model</li>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image182.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Add all fields as shown, hitting <code>+CREATE</code> to add each one</li>
-          <ul>
-            <li>amount, Award amount, <code>Integer</code>
+            <li>Modify value of $sc field cartItemTotal using formula</li>
+            <li><code>'$sc.setCartItemTotal( $sc.getCartItemTotal() + ($sci.getPrice() * $sci.getQuantity()));'</code>
             </li>
-            <li>explanation, Explanation, <code>String</code>
+            <li>Modify value of cartItemPromoSavings field using formula</li>
+            <li><code>'$sc.setCartItemPromoSavings($sc.getCartItemPromoSavings() + ($sci.getPromoSavings() * $sci.getQuantity()));'</code>
             </li>
-            <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image183.png" />
-            </div>
-          </ul>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Finished <code>Award</code> object in our domain model</li>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image184.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Finalize domain model by adding <code>Award</code> object to <code>Employee</code>
-          </li>
-          <ul>
-            <li>award, Award, <code>AWARD</code>
+            <li>update ShoppingCart: <code>'update( $sc );'</code>
+            </li>
+            <li>retract ShoppingCartItem: <code>'retract( $sci );'</code>
             </li>
           </ul>
+
           <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image234.png" />
+            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image52.png" />
           </div>
         </ul>
       </section>
 
       <section>
-        <h2>Create new domain model</h2>
+        <h2>Creating rules (DRL)</h2>
         <ul>
-          <li>Final domain model with <code>Award</code> and <code>Employee</code>
-          </li>
-          <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image235.png" />
-          </div>
+          <li>Save the rule.</li>
+          <li>Ensure your package builds:</li>
+          <ul>
+            <li><code>TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY</code>
+            </li>
+            <li>(should see green pop-up 'Build Successful')</li>
+
+          </ul>
         </ul>
       </section>
 
-      <section>
-        <h2>Save domain model</h2>
-        <ul>
-          <li>Click on <code>SAVE</code> button to persist the domain model</li>
-          <li>pop-up bar should say <code>Data model was saved</code>
-          </li>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image31.png" />
-      </section>
 
-      <section>
-        <h2>Rewards process project</h2>
-        <h5>(next up, creating rewards process...)</h5>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image185.png">
-      </section>
-
-      <section>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/jteimages/image42.png">
-      </section>
 
       <section>
         <div align="center">
@@ -241,7 +214,7 @@
       <section>
         <h3>JBoss BPM Suite Workshop</h3>
         <ul>
-          <li><a href="lab14.html" target="_blank">Lab 14 - Create rewards process</a>
+          <li><a href="lab07.html" target="_blank">Lab 07 - Create Guided Decision Table</a>
           </li>
         </ul>
       </section>

@@ -9,4 +9,4 @@ Getting started with the workshop locally:
 
 2. Open in browser, `file:///<path-to-project>/presentation-bpmsuite-rewards-workshop/index.html`
 
-3. Enjoy the workshop! 
+3. Enjoy the workshop!

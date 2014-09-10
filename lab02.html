@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Red Hat JBoss BPM Suite - Building the Rewards Business Process Workshop</title>
+  <title>Red Hat JBoss BRMS Suite - Building the Coolstore Business Rules Workshop</title>
 
   <meta name="description" content="Online BPM workshop.">
   <meta name="author" content="Eric D. Schabell">
@@ -23,11 +23,11 @@
   <!-- If the query includes 'print-pdf', include the PDF print sheet -->
   <script>
     if (window.location.search.match(/print-pdf/gi)) {
-    	var link = document.createElement('link');
-    	link.rel = 'stylesheet';
-    	link.type = 'text/css';
-    	link.href = 'css/print/pdf.css';
-    	document.getElementsByTagName('head')[0].appendChild(link);
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'css/print/pdf.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
     }
   </script>
 
@@ -43,12 +43,12 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
       <section>
-        <h3>Lab 12 - Create a new project</h3>
+        <h3>Lab 2 - Create a new project</h3>
       </section>
 
       <section>
         <h2>Lab Goal</h2>
-        <h4>To create a new project in the JBoss BPM Suite workbench</h4>
+        <h4>To create a new project in the JBoss BRMS workbench</h4>
       </section>
 
       <section>
@@ -64,23 +64,19 @@
           </ul>
           <li>In pop-up window, provide following:</li>
           <ul>
-            <li><code>Repository name: rewards</code>
+            <li><code>Repository name: coolstore-demo</code>
             </li>
             <li><code>Organizational unit: Demos</code>
             </li>
-            <li><code>Git URL: https://github.com/eschabell/bpmsuite-rewards-repo.git</code>
+            <li><code>Git URL: https://github.com/eschabell/coolstore-demo.git.zip</code>
             </li>
           </ul>
         </ul>
       </section>
 
-      <section>
-        <h4>After adding the repository</h4>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image176.png">
-      </section>
 
       <section>
-        <h2>JBoss BPM Suite structure</h2>
+        <h2>JBoss BRMS structure</h2>
         <ul>
           <li>Uses this framework for organizing & deploying projects:</li>
           <ul>
@@ -104,7 +100,7 @@
           </ul>
         </ul>
         <div style="float: right">
-          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image136.png" />
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image05.png" />
         </div>
       </section>
 
@@ -118,7 +114,7 @@
           </ul>
         </ul>
         <div style="float: right">
-          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image137.png" />
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image06.png" />
         </div>
       </section>
 
@@ -150,15 +146,15 @@
         <h2>Create new repository</h2>
         <ul>
           <li>We need to create or clone a repository</li>
-          <li>JBoss BPM Suite uses git as repository structure</li>
+          <li>JBoss BRMS uses git as repository structure</li>
           <ul>
             <li>we can clone existing git repositories</li>
             <li>we can create a new one</li>
           </ul>
           <li>For this lab, we create a new repository</li>
           <ul>
-            <li>creating an HR process</li>
-            <li>the employee Rewards process</li>
+            <li>creating a retail application</li>
+            <li>the Cool Store online web shop</li>
           </ul>
         </ul>
       </section>
@@ -171,7 +167,7 @@
             <li><code>REPOSITORIES -> NEW REPOSITORY</code>
             </li>
             <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image133.png" />
+              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image10.png" />
             </div>
           </ul>
         </ul>
@@ -185,7 +181,7 @@
             <li>click on <code>CREATE</code>
             </li>
             <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image134.png" />
+              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image11.png" />
             </div>
           </ul>
         </ul>
@@ -196,7 +192,7 @@
         <ul>
           <li>You see the pop-up showing the repository was created.</li>
           <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image135.png" />
+            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image12.png" />
           </div>
         </ul>
         </ul>
@@ -210,7 +206,7 @@
           <ul>
             <li>when deployed, will be deployed as a maven artifact (jar and pom)</li>
             <li>when deployed, will be in a maven repo</li>
-            <li>by default the internal repository from JBoss BPM Suite</li>
+            <li>by default the internal repository from JBoss BRMS</li>
             <li>it will be ready to be incorporated and consumed by applications</li>
           </ul>
         </ul>
@@ -224,7 +220,7 @@
             <li><code>AUTHORING -> PROJECT AUTHORING</code>
             </li>
             <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image138.png" />
+              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image13.png" />
             </div>
           </ul>
         </ul>
@@ -238,7 +234,7 @@
             <li><code>NEW ITEM -> PROJECT</code>
             </li>
             <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image139.png" />
+              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image14.png" />
             </div>
           </ul>
         </ul>
@@ -252,7 +248,7 @@
             <li>click on <code>OK</code>
             </li>
             <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image140.png" />
+              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image15.png" />
             </div>
           </ul>
         </ul>
@@ -264,7 +260,7 @@
           <li>Provide the <code>Group ID</code> details, click on <code>FINISH</code>
           </li>
           <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image141.png" />
+            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image16.png" />
           </div>
         </ul>
       </section>
@@ -273,9 +269,7 @@
         <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image142.png">
       </section>
 
-      <section>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/jteimages/image42.png">
-      </section>
+
 
       <section>
         <div align="center">
@@ -309,9 +303,9 @@
       </section>
 
       <section>
-        <h3>JBoss BPM Suite Workshop</h3>
+        <h3>JBoss BRMS Workshop</h3>
         <ul>
-          <li><a href="lab13.html" target="_blank">Lab 13 - Create a domain model</a>
+          <li><a href="lab03.html" target="_blank">Lab 03 - Create domain model</a>
           </li>
         </ul>
       </section>
@@ -325,53 +319,53 @@
     // Full list of configuration options available here:
      // https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
-    	controls: true,
-    	progress: true,
-    	history: true,
-    	center: true,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-    	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-    	transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-    	// Parallax scrolling
-    	// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-    	// parallaxBackgroundSize: '2100px 900px',
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
 
-    	// Optional libraries used to extend on reveal.js
-    	dependencies: [{
-    		src: 'lib/js/classList.js',
-    		condition: function() {
-    			return !document.body.classList;
-    		}
-    	}, {
-    		src: 'plugin/markdown/marked.js',
-    		condition: function() {
-    			return !!document.querySelector('[data-markdown]');
-    		}
-    	}, {
-    		src: 'plugin/markdown/markdown.js',
-    		condition: function() {
-    			return !!document.querySelector('[data-markdown]');
-    		}
-    	}, {
-    		src: 'plugin/highlight/highlight.js',
-    		async: true,
-    		callback: function() {
-    			hljs.initHighlightingOnLoad();
-    		}
-    	}, {
-    		src: 'plugin/zoom-js/zoom.js',
-    		async: true,
-    		condition: function() {
-    			return !!document.body.classList;
-    		}
-    	}, {
-    		src: 'plugin/notes/notes.js',
-    		async: true,
-    		condition: function() {
-    			return !!document.body.classList;
-    		}
-    	}]
+      // Optional libraries used to extend on reveal.js
+      dependencies: [{
+        src: 'lib/js/classList.js',
+        condition: function() {
+          return !document.body.classList;
+        }
+      }, {
+        src: 'plugin/markdown/marked.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/markdown/markdown.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }, {
+        src: 'plugin/zoom-js/zoom.js',
+        async: true,
+        condition: function() {
+          return !!document.body.classList;
+        }
+      }, {
+        src: 'plugin/notes/notes.js',
+        async: true,
+        condition: function() {
+          return !!document.body.classList;
+        }
+      }]
     });
   </script>
 

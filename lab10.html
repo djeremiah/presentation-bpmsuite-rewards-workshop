@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Red Hat JBoss BPM Suite - Building the Rewards Business Process Workshop</title>
+  <title>Red Hat JBoss BRMS Suite - Building the Coolstore Business Rules Workshop</title>
 
   <meta name="description" content="Online BPM workshop.">
   <meta name="author" content="Eric D. Schabell">
@@ -43,169 +43,140 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
       <section>
-        <h3>Lab 13 - Create a domain model</h3>
+        <h3>Lab 10 - Running the Cool Store Demo</h3>
       </section>
 
       <section>
         <h2>Lab Goal</h2>
-        <h4>To create a new domain model with the JBoss BPM Suite domain modeler</h4>
-        <img height="75%" width="75%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/bpmsuite-component-datamodeler.png">
+        <h4>To install the shopping cart web application and run the Cool Store Demo</h4>
       </section>
 
       <section>
-        <h2>Create new domain model</h2>
+        <h2>Install the Cool Store shopping cart web application</h2>
         <ul>
-          <li>Head over to the project authoring perspective:</li>
+          <li>You can obtain the brms-coolstore-demo.war in the Cool Store demo project.</li>
           <ul>
-            <li><code>AUTHORING -> PROJECT AUTHORING</code>
-            </li>
-            <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image138.png" />
-            </div>
-          </ul>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Open the domain modeler:</li>
-          <ul>
-            <li><code>TOOLS -> DATA MODELER</code>
-            </li>
-            <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image177.png" />
-            </div>
-          </ul>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Create Employee</li>
-          <ul>
-            <li>click on <code>+CREATE</code> button</li>
-          </ul>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image19.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Create <code>Employee</code> and click <code>+OK</code> when done</li>
-          <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image178.png" />
-          </div>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Add all fields as shown, hitting <code>+CREATE</code> to add each one</li>
-          <ul>
-            <li>name, Name, <code>String</code>
-            </li>
-            <li>dept, Department, <code>String</code>
+            <li><code>$ git clone https://github.com/eschabell/brms-coolstore-demo.git</code>
             </li>
           </ul>
-          <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image179.png" />
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image180.png" />
-          </div>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Finished <code>Employee</code> object in our domain model for now...</li>
+          <li>Deploy the web application into your brms-install-demo project.</li>
           <ul>
-            <li>later we will add an Award, but first we need to create the Award object</li>
-          </ul>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image181.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Add <code>Award</code> object to our domain model</li>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image182.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Add all fields as shown, hitting <code>+CREATE</code> to add each one</li>
-          <ul>
-            <li>amount, Award amount, <code>Integer</code>
+            <li><code>$ cd brms-coolstore-demo</code>
             </li>
-            <li>explanation, Explanation, <code>String</code>
+            <li><code>$ git checkout 6.0.1</code>
             </li>
-            <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image183.png" />
-            </div>
-          </ul>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Finished <code>Award</code> object in our domain model</li>
-        </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image184.png" />
-      </section>
-
-      <section>
-        <h2>Create new domain model</h2>
-        <ul>
-          <li>Finalize domain model by adding <code>Award</code> object to <code>Employee</code>
-          </li>
-          <ul>
-            <li>award, Award, <code>AWARD</code>
+            <li><code>$ cp support/brms-coolstore-demo.war brms-install-demo/target/jboss-eap-6.1/standalone/deployments/</code>
             </li>
           </ul>
-          <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image234.png" />
-          </div>
         </ul>
       </section>
-
       <section>
-        <h2>Create new domain model</h2>
+        <h2>Welcome to the Cool Store</h2>
         <ul>
-          <li>Final domain model with <code>Award</code> and <code>Employee</code>
-          </li>
-          <div style="float: right">
-            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image235.png" />
-          </div>
-        </ul>
-      </section>
+          <li>Start the JBoss BRMS server</li>
+          <li>Open the Cool Store web application:</li>
+          <ul>
+            <li><code>http://localhost:8080/brms-coolstore-demo</code>
+            </li>
 
+          </ul>
+
+        </ul>
+        <div style="float: right">
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image125.png" />
+        </div>
+      </section>
       <section>
-        <h2>Save domain model</h2>
+        <h2>Demo the Cool Store</h2>
         <ul>
-          <li>Click on <code>SAVE</code> button to persist the domain model</li>
-          <li>pop-up bar should say <code>Data model was saved</code>
-          </li>
+          <li>A simple demo shows changing shipping decision table values, picked up live in web application</li>
+          <ul>
+            <li>select <code>'Forge Laptop Sticker ($8.50)'</code> and click <code>'ADD TO CART'</code> button</li>
+            <li>note shipping calculated to <code>'2.99'</code>
+            </li>
+          </ul>
         </ul>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image31.png" />
+        <div style="float: right">
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image126.png" />
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image127.png" />
+        </div>
+      </section>
+      <section>
+        <h2>Demo the Cool Store</h2>
+        <ul>
+          <li>Now change the decision table shipping value in the JBoss BRMS dashboard</li>
+          <ul>
+            <li>login and open the decision table <code>'Shipping Rules'</code>
+            </li>
+            <li>change the <code>'Shipping Tier 1' 'Shipping Total'</code> value to <code>'22.99'</code>
+            </li>
+          </ul>
+
+        </ul>
+        <div style="float: right">
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image128.png" />
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image129.png" />
+        </div>
+      </section>
+      <section>
+        <h2>Demo the Cool Store</h2>
+        <ul>
+          <li>Save the rule</li>
+          <li>In poject editor we need to release a new version of our project</li>
+          <li>Bump up the Version ID:</li>
+          <ul>
+            <li><code>TOOLS -> PROJECT EDITOR</code>
+            </li>
+            <li><code>VERSION ID: 2.0.1</code>
+            </li>
+          </ul>
+        </ul>
+        <div style="float: right">
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image130.png" />
+        </div>
+      </section>
+      <section>
+        <h2>Demo the Cool Store</h2>
+        <ul>
+          <li>Ensure your package builds:</li>
+          <ul>
+            <li><code>TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY</code>
+            </li>
+            <li><code>(should see green pop-up 'Build Successful')</code>
+            </li>
+          </ul>
+        </ul>
+      </section>
+      <section>
+        <h2>Demo the Cool Store</h2>
+        <ul>
+          <li>Clear the values in the Cool Store shopping cart and re-run the previous purchase</li>
+          <ul>
+            <li>select <code>'Forge Laptop Sticker ($8.50)'</code> and click <code>'ADD TO CART'</code> button</li>
+            <li>note shipping calculated to <code>'22.99'</code>
+            </li>
+          </ul>
+        </ul>
+        <div style="float: right">
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image126.png" />
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image131.png" />
+        </div>
+      </section>
+      <section>
+        <h2>Demo the Cool Store</h2>
+        <ul>
+          <li>Video showing how this is done:</li>
+          <ul>
+            <li>http://vimeo.com/ericschabell/install-coolstore-demo</li>
+            <li></li>
+          </ul>
+        </ul>
+        <div style="float: right">
+          <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image171.png" />
+        </div>
       </section>
 
-      <section>
-        <h2>Rewards process project</h2>
-        <h5>(next up, creating rewards process...)</h5>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image185.png">
-      </section>
 
-      <section>
-        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/jteimages/image42.png">
-      </section>
 
       <section>
         <div align="center">
@@ -239,9 +210,9 @@
       </section>
 
       <section>
-        <h3>JBoss BPM Suite Workshop</h3>
+        <h3>JBoss BRMS Workshop</h3>
         <ul>
-          <li><a href="lab14.html" target="_blank">Lab 14 - Create rewards process</a>
+          <li><a href="lab11.html" target="_blank">Lab 11 - Install JBoss BPM Suite</a>
           </li>
         </ul>
       </section>
