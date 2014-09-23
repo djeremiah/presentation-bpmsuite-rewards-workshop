@@ -64,8 +64,6 @@
             </li>
             <li><code>RESOURCE NAME: Total Shopping Cart</code>
             </li>
-            <li><code>(don't check the DSL box this time)</code>
-            </li>
           </ul>
 
         </ul>
@@ -126,33 +124,6 @@
       <section>
         <h2>Creating guided rules</h2>
         <ul>
-          <li>Expand the 'show options' and add:</li>
-          <ul>
-            <li><code>check NO-LOOP box</code>
-            </li>
-            <li><code>RULEFLOW-GROUP: total-rules</code>
-            </li>
-            <ul>
-              <li>`($sc.cartItemPromoSavings == 0.0) ? 0.0 : $sc.cartItemPromoSavings * -1`</li>
-            </ul>
-          </ul>
-          <li>Save the rule</li>
-          <li>Ensure your package builds:</li>
-          <ul>
-            <li><code>TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY</code>
-            </li>
-            <li><code>(should see green pop-up 'Build Successful')</code>
-            </li>
-
-            <div style="float: right">
-              <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image43.png" />
-            </div>
-          </ul>
-      </section>
-
-      <section>
-        <h2>Creating guided rules</h2>
-        <ul>
           <li>Now the final guided rule will be created on your own:</li>
           <ul>
             <li><code>Apply Cart Item Promotions</code>
@@ -161,9 +132,6 @@
             </li>
             <li><code>RESOURCE NAME: Apply Cart Item Promotions</code>
             </li>
-            <li><code>don't check the DSL box this time</code>
-            </li>
-
           </ul>
         </ul>
       </section>
